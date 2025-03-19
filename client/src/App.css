@@ -1,0 +1,228 @@
+/* client/src/App.css */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-area {
+  display: flex;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 30px;
+}
+
+.query-input {
+  flex-grow: 1;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin-right: 15px;
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.submit-button {
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.chat-history {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.user-query {
+  background-color: #e8f0fe;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+  max-width: 70%;
+}
+
+.response-block {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.response {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.markdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.markdown-table th,
+.markdown-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.follow-up-questions {
+  margin-bottom: 20px;
+}
+
+.follow-up-questions p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.follow-up-questions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.follow-up-question {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.follow-up-question:hover {
+  background-color: #e0e0e0;
+}
+
+.google-search-results {
+  margin-top: 20px;
+}
+
+.google-search-results p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.search-result a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.search-result a:hover {
+  text-decoration: underline;
+}
+
+.loading {
+  font-size: 1rem;
+  font-style: italic;
+  color: #777;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .input-area,
+  .chat-history {
+    width: 95%;
+  }
+
+  .query-input {
+    margin-right: 10px;
+  }
+
+  .submit-button {
+    padding: 12px 20px;
+  }
+
+  .user-query,
+  .response-block {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.8rem;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  .query-input {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/* ... (rest of your CSS) */
+
+.typing-indicator {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #777;
+  margin-right: 5px;
+  animation: typing 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
