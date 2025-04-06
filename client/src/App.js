@@ -29,7 +29,7 @@ function App() {
     try {
       const encodedQuery = encodeURIComponent(newQuery);
       const eventSource = new EventSource(
-        `http://localhost:5000/api/stream?query=${encodedQuery}`
+        `http://localhost:5001/api/stream?query=${encodedQuery}`
       );
 
       let fullResponse = ""; // Accumulate the full response here
@@ -86,7 +86,7 @@ function App() {
     try {
       const encodedQuery = encodeURIComponent(originalQuery);
       const response = await fetch(
-        `http://localhost:5000/api/followup?originalQuery=${encodedQuery}`
+        `http://localhost:5001/api/followup?originalQuery=${encodedQuery}`
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -122,12 +122,11 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-title">
-        <span style={{ color: "#4285F4" }}>G</span>
-        <span style={{ color: "#DB4437" }}>o</span>
-        <span style={{ color: "#F4B400" }}>o</span>
-        <span style={{ color: "#4285F4" }}>g</span>
-        <span style={{ color: "#0F9D58" }}>l</span>
-        <span style={{ color: "#DB4437" }}>y</span>
+        <span style={{ color: "#4285F4" }}>P</span>
+        <span style={{ color: "#DB4437" }}>l</span>
+        <span style={{ color: "#F4B400" }}>e</span>
+        <span style={{ color: "#4285F4" }}>x</span>
+        <span style={{ color: "#0F9D58" }}>Y</span>
         </h1>
         <ChatInput onSubmit={handleStreamedSubmit} setQuery={setQuery} />  
       <div className="chat-history" ref={chatHistoryRef}>

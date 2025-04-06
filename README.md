@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Plexy - Perplexity Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Plexy is a web application designed to mimic the core functionality of Perplexity AI. It uses the Google Gemini API with search grounding to provide conversational search results based on user queries.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+*   Conversational search interface.
+*   Streaming responses from the Gemini API.
+*   Google Search integration for grounded answers.
+*   Follow-up question suggestions.
+*   Markdown rendering for responses.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   [Node.js](https://nodejs.org/) (LTS version recommended)
+*   [npm](https://www.npmjs.com/) (usually comes with Node.js) or [yarn](https://yarnpkg.com/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup
 
-### `npm test`
+1.  **Clone the repository:**
+    ```bash
+    git clone <repository-url>
+    cd plexy
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.  **Install server dependencies:**
+    Navigate to the project root directory (`plexy`) and run:
+    ```bash
+    npm install
+    ```
+    *(Or `yarn install` if you prefer yarn)*
 
-### `npm run build`
+3.  **Install client dependencies:**
+    Navigate to the `client` directory and run:
+    ```bash
+    cd client
+    npm install
+    ```
+    *(Or `yarn install`)*
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.  **Return to the root directory:**
+    ```bash
+    cd ..
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Environment Variables
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The backend server requires a Google Gemini API key to function.
 
-### `npm run eject`
+1.  Create a `.env` file in the **root** directory of the project (`plexy/.env`).
+2.  Add your Gemini API key to the `.env` file:
+    ```env
+    GEMINI_API_KEY=YOUR_API_KEY_HERE
+    ```
+3.  Replace `YOUR_API_KEY_HERE` with your actual key obtained from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Running the Application
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+You need to run both the backend server and the frontend client simultaneously.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1.  **Start the Backend Server:**
+    Open a terminal in the project's **root** directory (`plexy`) and run:
+    ```bash
+    node server/index.js
+    ```
+    The server will start, typically on port 5001.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2.  **Start the Frontend Client:**
+    Open a *second* terminal, navigate to the `client` directory (`plexy/client`), and run:
+    ```bash
+    npm start
+    ```
+    *(Or `yarn start`)*
+    This will launch the React development server, usually on port 3000, and should open the application automatically in your default web browser.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3.  **Access the Application:**
+    If it doesn't open automatically, navigate to `http://localhost:3000` in your web browser.

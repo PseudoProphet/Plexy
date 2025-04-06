@@ -9,9 +9,10 @@ const {
 } = require("@google/generative-ai");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
-app.use(cors({ origin: "http://localhost:5001" }));
+app.use(cors({ origin: "http://localhost:3000" })); // Allow requests from React dev server
+
 app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
